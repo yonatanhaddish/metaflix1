@@ -1,0 +1,32 @@
+.nav-bar-container {
+    background-color: #00509d;
+    height: 90px;
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 0; */
+    color: white;
+}
+
+/* h1 {
+    padding: 20px; */
+/* } */
+
+/* .nav-bar {
+    display: flex;
+}*/
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-end;
+
+} 
+
+a {
+    text-decoration: none;
+    color: white;
+    padding-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    padding-right: 60px;
+}
+

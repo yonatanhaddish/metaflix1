@@ -1,0 +1,57 @@
+.container {
+    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    padding-left: 150px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    width: 320px;
+    height: 40rem;
+    /* opacity: 20%; */
+    text-align: center;
+    background-color: white;
+    margin: 40px; 
+    transition: transform 0.2s;
+}
+.cards:hover {
+    opacity: 100%;
+    transform: scale(1.03);
+}
+
+img {
+    width: 100%;
+}
+
+.card-heart {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    flex-direction: column;
+    /* text-align:center;
+    justify-content: center; */
+}
+
+.card-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-remove {
+    background-color: red;
+    width: 80%;
+    height: 30px;
+    border: 0ch;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+};
+
+
+/* .bg-salmon {
+    background-color: red;
+    color: green;
+} */
