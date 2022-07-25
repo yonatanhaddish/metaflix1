@@ -10,8 +10,6 @@ const MovieLists = (props) => {
   const handleClickk = ({movie, index}) => {
     
     setActivee(!activee);
-    console.log(activee)
-
   };
 
   

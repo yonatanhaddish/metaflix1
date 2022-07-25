@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Heart from "react-heart";
-// import './movielist.css'
-// import './heart.css';
+
 const AddFavourite = (props) => {
 
   const [activeHeart, setActiveHeart] = useState(false);
@@ -13,36 +12,31 @@ const AddFavourite = (props) => {
   const handleClick = ({movie, index}) => {
 
     setActiveHeart(!activeHeart)
-    console.log(movie + "clicked!")
-    console.log(index)
-    console.log(activeHeart);
     // saveToLocalStorege(favMovies);
     window.localStorage.setItem(`my-fav-list-heart : ${index}`, JSON.stringify(activeHeart));
   }
 
 const styleHeart01 = {
   width: "2.5rem",
-  // fill: "red",
 };
 
 const styleHeart02 = {
-  width: "1.5rem",
-  // fill: "red",
+  width: "4.5rem",
 };
+
 
 useEffect(() => {
   window.localStorage.setItem(`my-fav-list-heart : ${index}`, JSON.stringify(activeHeart))
-  console.log(`my-fav-list-heart : ${index}`, activeHeart)
+  // console.log(`my-fav-list-heart : ${index}`, activeHeart)
 }, [activeHeart]);
 
 // useEffect(() => {
-//   const data = window.localStorage.getItem(`my-fav-list-heart : ${index}`);
-//   if (data !== null) setActiveHeart(JSON.parse(data))
-//   console.log(data)
+//   const items = JSON.parse(window.localStorage.getItem(`my-fav-list-heart : ${index}`));
+//   if (items) {
+//     setActiveHeart(items)
+//   }
+//   console.log(items)
 // }, []);
-
-const data01 = window.localStorage.getItem(`my-fav-list-heart : ${index}`);
-console.log(`my-fav-list-heart : ${index} ${data01}`)
 
   return(
     <>
