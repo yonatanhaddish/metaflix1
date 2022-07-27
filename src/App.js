@@ -29,8 +29,8 @@ function App() {
   // Check for a duplicated Favourite list and Add them
   const addFavouriteMovie = (movie) => {
     const newFavouriteLists = [...favMovies, movie];
-    console.log(newFavouriteLists);
-    console.log(movie.id);
+    // console.log(newFavouriteLists);
+    // console.log(movie.id);
     // console.log(favMovies)
 
     const newFavouriteList = Array.from(

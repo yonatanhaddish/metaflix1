@@ -50,8 +50,10 @@ img {
     cursor: pointer;
 };
 
+.styleHeart01 {
+    background-color: green;
+}
 
-/* .bg-salmon {
-    background-color: red;
-    color: green;
-} */
+.styleHeart02 {
+    background-color: purple;
+}

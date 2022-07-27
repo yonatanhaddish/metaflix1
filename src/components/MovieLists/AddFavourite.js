@@ -2,53 +2,54 @@ import React, { useEffect, useState } from "react";
 import Heart from "react-heart";
 
 const AddFavourite = (props) => {
+  const [fav, setFav] = useState(false);
 
-  const [activeHeart, setActiveHeart] = useState(false);
+  const movie = props.movie;
+  const index = props.index;
 
-  const movie= props.movie
-  const index= props.index
+  const handleClick = (movie) => {
+    const favMovies = JSON.parse(window.localStorage.getItem("fav-movies"));
+    window.localStorage.setItem("fav-movies", { ...favMovies, movie });
+  };
+
+  const styleHeart01 = {
+    width: "2.5rem",
+  };
+
+  const styleHeart02 = {
+    width: "2.5rem",
+  };
+
+  useEffect(() => {
+    const favMovies = JSON.parse(window.localStorage.getItem("fav-movies"));
+
+    if (favMovies) {
+      favMovies.some((favMovie) => {
+        if (favMovie.id === movie.id) {
+          // console.log("true");
+          setFav(true);
+        }
+      });
+    }
+  }, [movie, window.localStorage.getItem("fav-movies")]);
+
+  // console.log(movie)
 
 
-  const handleClick = ({movie, index}) => {
-
-    setActiveHeart(!activeHeart)
-    // saveToLocalStorege(favMovies);
-    window.localStorage.setItem(`my-fav-list-heart : ${index}`, JSON.stringify(activeHeart));
-  }
-
-const styleHeart01 = {
-  width: "2.5rem",
-};
-
-const styleHeart02 = {
-  width: "4.5rem",
-};
-
-
-useEffect(() => {
-  window.localStorage.setItem(`my-fav-list-heart : ${index}`, JSON.stringify(activeHeart))
-  // console.log(`my-fav-list-heart : ${index}`, activeHeart)
-}, [activeHeart]);
-
-// useEffect(() => {
-//   const items = JSON.parse(window.localStorage.getItem(`my-fav-list-heart : ${index}`));
-//   if (items) {
-//     setActiveHeart(items)
-//   }
-//   console.log(items)
-// }, []);
-
-  return(
+  return (
     <>
-    <Heart
-              // className= {`my-fav-list-heart : ${index}` === 'true' ? 'bg-salmon' : 'bg-salmon-01'}
-              isActive={activeHeart}
-              style={styleHeart01}
-              // onClick={() => props.handleFavouritesClick(movie)}
-              onClick= {() => handleClick({movie, index})}
-            />
+      <Heart
+        className={
+          `my-fav-list-heart ${index}` === "true"
+            ? styleHeart01
+            : styleHeart02
+        }
+        isActive={fav}
+        style={styleHeart01}
+        onClick={() => handleClick({movie, index})}
+      />
     </>
-  )
-}
+  );
+};
 
 export default AddFavourite;

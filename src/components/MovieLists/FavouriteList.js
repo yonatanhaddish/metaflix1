@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./movielists.css";
 
 const FavouriteList = (prop) => {
-  const FavouriteComponent = prop.favouriteComponent;
-  
   return (
     <div className="container">
       {prop.favMovies.map((favMovie, index) => (
@@ -20,10 +18,11 @@ const FavouriteList = (prop) => {
             <p>{favMovie.title}</p>
           </div>
           <div className="card-heart">
-            {/* <FavouriteComponent /> */}
-
             <div>
-              <button className="btn-remove" onClick={() => prop.handleFavouritesClick(favMovie)}>
+              <button
+                className="btn-remove"
+                onClick={() => prop.handleFavouritesClick(favMovie)}
+              >
                 Remove
               </button>
             </div>
